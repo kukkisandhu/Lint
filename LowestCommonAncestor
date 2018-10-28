@@ -1,3 +1,12 @@
+/* ALGORITHM 
+1. Search the two Nodes in the Binary Tree. 
+2. If Node found return node else return null.
+3. If some Node receives both left and right pointer as NOT null, then it is LCA else return what it receive. 
+
+
+
+
+*/
 /**
  * Definition of TreeNode:
  * public class TreeNode {
