@@ -1,5 +1,5 @@
 import java.util.*;
-class Solution {
+public class Solution {
     public static int singleNumber(int[] nums) {
         HashMap<Integer, Integer> mymap=new HashMap<Integer,Integer>();
         for(int num:nums){
@@ -146,88 +146,88 @@ class Solution {
     }
 
 
-        public int threeSumClosest(int[] nums, int target) {
-            Arrays.sort(nums);
-            int result=0;
-            int sum=Integer.MAX_VALUE;
-            int min=Integer.MAX_VALUE;
-            int i=0;
-            for(i=0;i<nums.length-1;i++){
-                int j=i+1;
-                int k=nums.length-1;
-                while(j<k){
-                    sum=nums[i]+nums[j]+nums[k];
-                    int  differ=Math.abs(sum-target);
-                    if(differ==0){
-                        return sum;
-                    }
-                    if(differ<min){
-                        min=differ;
-                        result=sum;
-                    }
-                    if(sum<target){
-                        j++;
-                    }
-                    else{
-                        k--;
-                    }
+    public int threeSumClosest(int[] nums, int target) {
+        Arrays.sort(nums);
+        int result=0;
+        int sum=Integer.MAX_VALUE;
+        int min=Integer.MAX_VALUE;
+        int i=0;
+        for(i=0;i<nums.length-1;i++){
+            int j=i+1;
+            int k=nums.length-1;
+            while(j<k){
+                sum=nums[i]+nums[j]+nums[k];
+                int  differ=Math.abs(sum-target);
+                if(differ==0){
+                    return sum;
                 }
-            }
-            return result;
-        }
-        public static void reverseString(char[] s){
-            int start=0;
-            int end=s.length-1;
-           while(start<end){
-                char temp=s[start];
-                s[start]=s[end];
-                s[end]=temp;
-                start++;
-                end--;
+                if(differ<min){
+                    min=differ;
+                    result=sum;
+                }
+                if(sum<target){
+                    j++;
+                }
+                else{
+                    k--;
+                }
             }
         }
-        public static boolean isPalindrome(String sb){
-            String s=sb.toUpperCase();
-            if(s.length()==0){
-               return true;
-            }
-            int start=0;
-            int end=s.length()-1;
-            while (start<end){
-                if (!Character.isLetterOrDigit(s.charAt(start))){
-                    start++;
-                }
-                if (!Character.isLetterOrDigit(s.charAt(end))){
-                    end--;
-                }
-                System.out.print(s.charAt(end));
-                System.out.println(s.charAt(start));
-                if(s.charAt(start)!=s.charAt(end)){
-                    return false;
-                }
-                start++;
-                end--;
-            }
-
+        return result;
+    }
+    public static void reverseString(char[] s){
+        int start=0;
+        int end=s.length-1;
+        while(start<end){
+            char temp=s[start];
+            s[start]=s[end];
+            s[end]=temp;
+            start++;
+            end--;
+        }
+    }
+    public static boolean isPalindrome(String sb){
+        String s=sb.toUpperCase();
+        if(s.length()==0){
             return true;
         }
-
-    public static String myreverseString(String s){
-            if(s.length()==0){
-                return "";
+        int start=0;
+        int end=s.length()-1;
+        while (start<end){
+            if (!Character.isLetterOrDigit(s.charAt(start))){
+                start++;
             }
-            String[] myarray=s.split(" ");
-            StringBuilder sb=new StringBuilder();
-            int start=0;
-            int end=myarray.length-1;
-            while (start<end){
-                sb.append(myarray[end]);
-                sb.append(" ");
+            if (!Character.isLetterOrDigit(s.charAt(end))){
                 end--;
             }
+            System.out.print(s.charAt(end));
+            System.out.println(s.charAt(start));
+            if(s.charAt(start)!=s.charAt(end)){
+                return false;
+            }
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+
+    public static String myreverseString(String s){
+        if(s.length()==0){
+            return "";
+        }
+        String[] myarray=s.split(" ");
+        StringBuilder sb=new StringBuilder();
+        int start=0;
+        int end=myarray.length-1;
+        while (start<end){
+            sb.append(myarray[end]);
+            sb.append(" ");
+            end--;
+        }
 
 
-            return sb.toString();
+        return sb.toString();
     }
 
 

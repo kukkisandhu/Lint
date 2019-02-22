@@ -9,7 +9,9 @@
  *     }
  * }
  */
-public class Solution {
+
+public class BinaryTreeInorderTransversal{
+
     /**
      * @param root: The root of binary tree.
      * @return: Inorder in ArrayList which contains node values.
@@ -17,19 +19,19 @@ public class Solution {
     public ArrayList<Integer> inorderTraversal(TreeNode root) {
         // write your code here
         ArrayList<Integer> myList=new ArrayList<>();
-    transverse(root,myList);
-    return myList;
-  }
-  
-  public void transverse(TreeNode node,ArrayList<Integer> result){
-  if(node==null){
-  return;
-  }
-  transverse(node.left,result);
-  result.add(node.val);
-  transverse(node.right,result);
+        transverse(root,myList);
+        return myList;
+    }
 
-  }
+    public void transverse(TreeNode node,ArrayList<Integer> result){
+        if(node==null){
+            return;
+        }
+        transverse(node.left,result);
+        result.add(node.val);
+        transverse(node.right,result);
+
+    }
 }
 /* InOrder without Recursion can be implemented with the help of the Stack as well.
 public Class Solution{
@@ -49,4 +51,5 @@ public ArrayList<Integer> inorderTraversal(TreeNode root) {
         }
         return result;
     }
+    */
 }

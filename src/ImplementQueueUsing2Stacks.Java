@@ -1,16 +1,17 @@
+import java.*;
 /*
 Take 2 stacks, One is main stack and other is tempstack
 1. For the push -> Push the element into the main stack
 2. For the POP ->
   a) check if the tempstack is empty,then transfer all the elements from mainstack to tempstack
   b)POP the element from the tempstack
-3.For the PEEK -> 
+3.For the PEEK ->
   a) Check if the tempstack is empty, then transfer all the elements from mainstack to tempstack
   b) PEEK the element from the tempstack
 */
 
+public class ImplementQueueUsing2Stacks{
 
-public class MyQueue {
     Stack<Integer> mystack=new Stack<Integer>();
     Stack<Integer> tempstack=new Stack<Integer>();
     public MyQueue() {
@@ -51,4 +52,6 @@ public class MyQueue {
         }
         return tempstack.peek();
     }
+
+
 }
